@@ -8,6 +8,12 @@ const useStore = create((set) => ({
       localStorage.setItem('caughtPokemons', JSON.stringify(updatedCaughtPokemons));
       return { caughtPokemons: updatedCaughtPokemons };
     }),
+  removeCaughtPokemon: (pokemonId) =>
+    set((state) => {
+      const updatedCaughtPokemons = state.caughtPokemons.filter(pokemon => pokemon.id !== pokemonId);
+      localStorage.setItem('caughtPokemons', JSON.stringify(updatedCaughtPokemons));
+      return { caughtPokemons: updatedCaughtPokemons };
+    }),
   clearCaughtPokemons: () =>
     set(() => {
       localStorage.removeItem('caughtPokemons');
@@ -16,3 +22,4 @@ const useStore = create((set) => ({
 }));
 
 export default useStore;
+
