@@ -76,7 +76,7 @@
 
       return (
         <div className="flex flex-col items-center space-y-4">
-          <div className="flex w-full max-w-sm items-center space-x-2">
+          <div className="flex w-full max-w-sm items-center space-x-2 mt-9">
             <Input
               type="text"
               placeholder="Enter a Pokemon Name"
