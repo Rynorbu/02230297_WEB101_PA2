@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pokémon Catcher App
+
+Welcome to the Pokémon Catcher App! This is a simple web application that allows users to search for Pokémon, view details about them, and keep track of which ones they have caught.
+
+## Features
+
+* Search Pokémon: You can search for Pokémon by name.
+* View Pokémon Details: See details about each Pokémon, including their type, abilities, and stats.
+* Catch Pokémon: Add Pokémon to your collection.
+* Release Pokémon: Remove Pokémon from your collection.
+* Pagination: Browse through a list of Pokémon with pagination controls.
+
+### Technologies Used
+
+* React: For building the user interface.
+* Zustand: For state management.
+* PokéAPI: For fetching Pokémon data.
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+Node.js (v14 or higher recommended)
+npm or yarn
 
-```bash
+
+### Install the dependencies:
+
+First clone my repo.
+
+npm install
+
+### Start the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and go to http://localhost:3000 to see the app in action.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Searching for Pokémon
 
-## Learn More
+Enter the name of the Pokémon in the search bar at the top of the page. Click the "Search" button to find the Pokémon.
 
-To learn more about Next.js, take a look at the following resources:
+### Viewing Pokémon Details
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After searching, Pokémon details will be displayed including their type, abilities, and stats.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Catching Pokémon
+Click the "Caught" button on the Pokémon card to add it to your collection.
 
-## Deploy on Vercel
+View your collection by clicking the "Show Caught Pokémon" button.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Releasing Pokémon
+In the caught Pokémon view, click the "Release" button on the Pokémon card to remove it from your collection.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Pagination
+Use the pagination controls at the bottom to navigate through different pages of Pokémon.
+
+
+### Zustand Store
+
+The Zustand store manages the state of caught Pokémon. The state is persisted in localStorage.
+
+### Actions
+
+* addCaughtPokemon(pokemon): Adds a Pokémon to the caught list and updates localStorage.
+* removeCaughtPokemon(pokemonId): Removes a Pokémon from the caught list by ID and updates localStorage.
+* clearCaughtPokemons(): Clears the caught Pokémon list and removes it from localStorage.
